@@ -216,6 +216,7 @@ See you around, Vanessa.     - Jushua Salaguste`,
         "brent":                 "brent, you did well this sem!! i am always thankful in meeting you and thanks for always a reliable friend   - agnes bonaparta",
         "saira":                 "saira, you did well this sem!! may the pocoloco luck be with us - agnes bonaparta",
         "jullian":               "jullian, you did well this sem!! thanks man for everything specially when im at lowest you guys help me alot and i am greatly thankful for that. - agnes bonaparta",
+        "joachim":               "joachim, my neighbor, such a eager friend laban lang boy graduate ta tanan - agnes bonaparta",
         "stefanie":
           "yoww stef, good job this sem!! you did well, never give up boy laban lang ta always and if you need help ill be here. im rooting for you, maka graduate lagi ta tanan.   - jushua salaguste"
       };
