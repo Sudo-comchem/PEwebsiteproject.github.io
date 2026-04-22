@@ -27,73 +27,50 @@ document.addEventListener("DOMContentLoaded", () => {
   const slideshowImage = document.getElementById("slideshowImage");
 
 
-/* =========================
-   MULTIPLE MUSIC
-   Random song each visit
-========================= */
+  /* =========================
+     MULTIPLE MUSIC
+     Random song each visit
+  ========================= */
 
-const musicList = [
-  "website theme.mp3",
-  "website theme 2.mp3",
-  "music/song3.mp3"
-];
+  const musicList = [
+    "website theme.mp3",
+    "website theme 2.mp3",
+    
+  ];
 
-if (audio) {
-  const randomSong = musicList[Math.floor(Math.random() * musicList.length)];
-  audio.src = randomSong;
-  audio.load();
-  audio.loop = true;
-  audio.volume = 0.6;
-  audio.playsInline = true;
+  if (audio) {
+    const randomSong = musicList[Math.floor(Math.random() * musicList.length)];
+    audio.src = randomSong;
+    audio.load();
+    audio.loop = true;
+    audio.volume = 0.6;
 
-  function updateMusicIcon() {
-    if (!musicOn || !musicOff) return;
-
-    if (audio.paused) {
-      musicOn.style.display = "none";
-      musicOff.style.display = "block";
-    } else {
-      musicOn.style.display = "block";
-      musicOff.style.display = "none";
-    }
-  }
-
-  function tryPlayMusic() {
-    audio.play()
-      .then(() => {
-        updateMusicIcon();
-      })
-      .catch(() => {
-        updateMusicIcon();
+    function tryPlayMusic() {
+      audio.play().then(() => {
+        if (musicOn) musicOn.style.display = "block";
+        if (musicOff) musicOff.style.display = "none";
+      }).catch(() => {
+        // autoplay blocked by browser
       });
-  }
-
-  updateMusicIcon();
-
-  // try autoplay
-  tryPlayMusic();
-
-  // first interaction fallback for phones
-  const startMusicOnInteraction = () => {
-    if (audio.paused) {
-      tryPlayMusic();
     }
 
-    document.removeEventListener("click", startMusicOnInteraction);
-    document.removeEventListener("touchstart", startMusicOnInteraction);
-    document.removeEventListener("pointerdown", startMusicOnInteraction);
-    document.removeEventListener("keydown", startMusicOnInteraction);
-  };
+    // try autoplay immediately
+    tryPlayMusic();
 
-  document.addEventListener("click", startMusicOnInteraction, { passive: true });
-  document.addEventListener("touchstart", startMusicOnInteraction, { passive: true });
-  document.addEventListener("pointerdown", startMusicOnInteraction, { passive: true });
-  document.addEventListener("keydown", startMusicOnInteraction);
+    // fallback on first interaction
+    const startMusicOnInteraction = () => {
+      if (audio.paused) {
+        tryPlayMusic();
+      }
+      document.removeEventListener("click", startMusicOnInteraction);
+      document.removeEventListener("touchstart", startMusicOnInteraction);
+      document.removeEventListener("keydown", startMusicOnInteraction);
+    };
 
-  // keep icon in sync
-  audio.addEventListener("play", updateMusicIcon);
-  audio.addEventListener("pause", updateMusicIcon);
-}
+    document.addEventListener("click", startMusicOnInteraction);
+    document.addEventListener("touchstart", startMusicOnInteraction);
+    document.addEventListener("keydown", startMusicOnInteraction);
+  }
 
 
   /* =========================
@@ -233,9 +210,14 @@ You did well this sem.
 
 <br><br>
 
-See you around, Vanessa.`,
+See you around, Vanessa.     - Jushua Salaguste`,
+
+        "agnes bonaparta":          "the creator of this website, the one who made all the code and design and put in so much effort to make this happen.",
+        "brent":                 "brent, you did well this sem!! i am always thankful in meeting you and thanks for always a reliable friend   - agnes bonaparta",
+        "saira":                 "saira, you did well this sem!! may the pocoloco luck be with us - agnes bonaparta",
+        "jullian":               "jullian, you did well this sem!! thanks man for everything specially when im at lowest you guys help me alot and i am greatly thankful for that. - agnes bonaparta",
         "stefanie":
-          "yoww stef, good job this sem!! you did well, never give up boy laban lang ta always and if you need help ill be here. im rooting for you, maka graduate lagi ta tanan."
+          "yoww stef, good job this sem!! you did well, never give up boy laban lang ta always and if you need help ill be here. im rooting for you, maka graduate lagi ta tanan.   - jushua salaguste"
       };
 
       const randomPulls = [
