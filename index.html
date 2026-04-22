@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation of our smiles</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <audio id="bgMusic"></audio>
+
+  <div id="introOverlay">
+    <div class="intro-card">
+      <h1>Coded by Agnes Bonaparta</h1>
+      <p class="intro-warning">project by the MLS 2G</p>
+      <p class="intro-warning">For the best experience, please open this website on a laptop</p>
+      <p class="intro-warning">and turn on your sound!</p>
+    </div>
+  </div>
+
+  <div class="app-shell">
+    <div class="stage">
+
+      <button id="musicBtn" class="music-btn" aria-label="Toggle music">
+        <svg id="musicOn" viewBox="0 0 100 100" class="speaker-icon">
+          <polygon points="18,40 35,40 55,22 55,78 35,60 18,60" fill="#8f7462"></polygon>
+          <path d="M66 38 Q78 50 66 62" stroke="#8f7462" stroke-width="4" fill="none" stroke-linecap="round"></path>
+          <path d="M74 30 Q92 50 74 70" stroke="#8f7462" stroke-width="4" fill="none" stroke-linecap="round"></path>
+        </svg>
+
+        <svg id="musicOff" viewBox="0 0 100 100" class="speaker-icon" style="display:none;">
+          <polygon points="18,40 35,40 55,22 55,78 35,60 18,60" fill="#8f7462"></polygon>
+          <line x1="70" y1="35" x2="90" y2="65" stroke="#8f7462" stroke-width="5"></line>
+          <line x1="90" y1="35" x2="70" y2="65" stroke="#8f7462" stroke-width="5"></line>
+        </svg>
+      </button>
+
+      <div class="pages-wrapper" id="pagesWrapper">
+
+        <!-- PAGE 1 -->
+        <section class="page" id="page-intro">
+          <h1 class="title intro-title">Documentation of our smiles</h1>
+          <h2 class="subtitle intro-subtitle">Not a farewell—just, till then</h2>
+
+          <div class="body-text intro-text">
+            <p>This website showcases the documented pictures</p>
+            <p>and videos during the PE 4 Culminating Activity.</p>
+            <br>
+            <p>Navigate the website using the buttons below.</p>
+            <p>At the end, there will be a cute surprise</p>
+          </div>
+
+          <div class="placeholder main-frame intro-main-frame">
+            <img id="slideshowImage" src="frontpictures/font picture.jpg" alt="Intro Photo">
+          </div>
+
+          <div class="sparkle" style="left:20%; top:80%;"></div>
+          <div class="sparkle" style="left:60%; top:90%;"></div>
+          <div class="sparkle" style="left:80%; top:70%;"></div>
+          <div class="sparkle" style="left:40%; top:60%;"></div>
+          <div class="sparkle" style="left:70%; top:50%;"></div>
+          <div class="sparkle" style="left:30%; top:40%;"></div>
+          <div class="sparkle" style="left:50%; top:30%;"></div>
+          <div class="sparkle" style="left:80%; top:20%;"></div>
+        </section>
+
+        <!-- PAGE 2 -->
+        <section class="page" id="page-pictures">
+          <div class="poem-heading">
+            <div>Click!!</div>
+            <div>Snap!!</div>
+          </div>
+
+          <div class="body-text poem-text">
+            <p>How quickly is it now to take pic</p>
+            <p>Time flees so quick</p>
+            <p>Moments freeze, yet somehow slip,</p>
+            <p>Laughter caught at every click.</p>
+            <p>Frames we didn’t know we’d keep,</p>
+            <p>Now the memories run so deep.</p>
+          </div>
+
+          <div class="pictures-scroll-area">
+            <div class="pictures-canvas">
+
+              <div class="placeholder frame-a"><img src="picture section/IMG_2372.jpg" alt="Picture 1"></div>
+              <div class="placeholder frame-b"><img src="picture section/IMG_20260407_132446_471.jpg" alt="Picture 2"></div>
+              <div class="placeholder frame-c"><img src="picture section/IMG_20260407_132453_319.jpg" alt="Picture 3"></div>
+              <div class="placeholder frame-d"><img src="picture section/IMG_2379.jpg" alt="Picture 4"></div>
+              <div class="placeholder frame-e"><img src="picture section/IMG_2383.jpg" alt="Picture 5"></div>
+              <div class="placeholder frame-f"><img src="picture section/IMG_2385.jpg" alt="Picture 6"></div>
+              <div class="placeholder frame-g"><img src="picture section/IMG_2384.jpg" alt="Picture 7"></div>
+              <div class="placeholder frame-h"><img src="picture section/IMG_2395.jpg" alt="Picture 8"></div>
+              <div class="placeholder frame-i"><img src="picture section/IMG_2397.jpg" alt="Picture 9"></div>
+              <div class="placeholder frame-j"><img src="picture section/IMG_2399.jpg" alt="Picture 10"></div>
+              <div class="placeholder frame-k"><img src="picture section/4.jpg" alt="Picture 11"></div>
+              <div class="placeholder frame-l"><img src="picture section/1.jpg" alt="Picture 12"></div>
+              <div class="placeholder frame-m"><img src="picture section/p3.jpg" alt="Picture 13"></div>
+              <div class="placeholder frame-n"><img src="picture section/p1.jpg" alt="Picture 14"></div>
+              <div class="placeholder frame-o"><img src="picture section/7.jpg" alt="Picture 15"></div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- PAGE 3 -->
+<section class="page" id="page-videos">
+
+  <div class="videos-scroll-area">
+    <div class="videos-canvas">
+
+      <div class="media-card media-card-1">
+        <div class="inner-placeholder">
+          <video controls>
+            <source src="video section/video pe.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-icons-bar">
+  <span class="icon">♥</span>
+  <span class="icon">◔</span>
+  <span class="icon">➤</span>
+</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="dialogue-title">
+    <div>Goodness</div>
+    <div>Gracious</div>
+  </div>
+
+  <div class="body-text dialogue-text">
+    <p>Ikaw ‘yung nag-shoplift. You were</p>
+    <p>the one caught stealing on CCTV. Oh</p>
+    <p>my God! No way! I cannot take this</p>
+    <p>anymore. No way! My twin brother is</p>
+    <p>a criminal,</p>
+  </div>
+
+</section>
+
+        <!-- PAGE 4 -->
+        <section class="page" id="page-end">
+          <div class="envelope-scene">
+            <div class="letter-note">
+              <div id="letterMessage">૮ ˶ᵔ ᵕ ᵔ˶ ა<br>⁠♡𐔌•˕ •マ.ᐟ</div>
+            </div>
+            <div class="envelope-left"></div>
+            <div class="envelope-right"></div>
+            <div class="envelope-bottom"></div>
+          </div>
+
+          <div class="end-title">
+            <div>Not a farewell</div>
+            <div>just, till then</div>
+          </div>
+
+          <div class="end-subtext">MLS 2G PADAYON!!</div>
+
+          <input id="nameInput" class="name-input" type="text" placeholder="insert your first name here">
+          <button id="messageBtn" class="message-btn" type="button">Get your character</button>
+
+          <div class="pull-result" id="pullResult">
+            <div id="pullText" class="pull-text">Pull your character</div>
+            <div class="pull-image-box">
+              <img id="pullImage" src="" alt="Random pull image">
+            </div>
+          </div>
+
+          
+        </section>
+
+      </div>
+
+      <div class="floating-gif" id="floatingGif">
+        <img src="gif/agnes-tachyon-esukevi-ezgif.com-effects.gif" alt="Floating GIF">
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-indicator" id="progressIndicator"></div>
+      </div>
+
+      <nav class="bottom-nav">
+        <button class="nav-btn active" data-page="0">Introduction</button>
+        <button class="nav-btn" data-page="1">Pictures</button>
+        <button class="nav-btn" data-page="2">Videos</button>
+        <button class="nav-btn" data-page="3">The End</button>
+      </nav>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
