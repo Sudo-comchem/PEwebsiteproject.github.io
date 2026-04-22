@@ -27,50 +27,73 @@ document.addEventListener("DOMContentLoaded", () => {
   const slideshowImage = document.getElementById("slideshowImage");
 
 
-  /* =========================
-     MULTIPLE MUSIC
-     Random song each visit
-  ========================= */
+/* =========================
+   MULTIPLE MUSIC
+   Random song each visit
+========================= */
 
-  const musicList = [
-    "website theme.mp3",
-    "website theme 2.mp3",
-    
-  ];
+const musicList = [
+  "website theme.mp3",
+  "website theme 2.mp3",
+  "music/song3.mp3"
+];
 
-  if (audio) {
-    const randomSong = musicList[Math.floor(Math.random() * musicList.length)];
-    audio.src = randomSong;
-    audio.load();
-    audio.loop = true;
-    audio.volume = 0.6;
+if (audio) {
+  const randomSong = musicList[Math.floor(Math.random() * musicList.length)];
+  audio.src = randomSong;
+  audio.load();
+  audio.loop = true;
+  audio.volume = 0.6;
+  audio.playsInline = true;
 
-    function tryPlayMusic() {
-      audio.play().then(() => {
-        if (musicOn) musicOn.style.display = "block";
-        if (musicOff) musicOff.style.display = "none";
-      }).catch(() => {
-        // autoplay blocked by browser
+  function updateMusicIcon() {
+    if (!musicOn || !musicOff) return;
+
+    if (audio.paused) {
+      musicOn.style.display = "none";
+      musicOff.style.display = "block";
+    } else {
+      musicOn.style.display = "block";
+      musicOff.style.display = "none";
+    }
+  }
+
+  function tryPlayMusic() {
+    audio.play()
+      .then(() => {
+        updateMusicIcon();
+      })
+      .catch(() => {
+        updateMusicIcon();
       });
+  }
+
+  updateMusicIcon();
+
+  // try autoplay
+  tryPlayMusic();
+
+  // first interaction fallback for phones
+  const startMusicOnInteraction = () => {
+    if (audio.paused) {
+      tryPlayMusic();
     }
 
-    // try autoplay immediately
-    tryPlayMusic();
+    document.removeEventListener("click", startMusicOnInteraction);
+    document.removeEventListener("touchstart", startMusicOnInteraction);
+    document.removeEventListener("pointerdown", startMusicOnInteraction);
+    document.removeEventListener("keydown", startMusicOnInteraction);
+  };
 
-    // fallback on first interaction
-    const startMusicOnInteraction = () => {
-      if (audio.paused) {
-        tryPlayMusic();
-      }
-      document.removeEventListener("click", startMusicOnInteraction);
-      document.removeEventListener("touchstart", startMusicOnInteraction);
-      document.removeEventListener("keydown", startMusicOnInteraction);
-    };
+  document.addEventListener("click", startMusicOnInteraction, { passive: true });
+  document.addEventListener("touchstart", startMusicOnInteraction, { passive: true });
+  document.addEventListener("pointerdown", startMusicOnInteraction, { passive: true });
+  document.addEventListener("keydown", startMusicOnInteraction);
 
-    document.addEventListener("click", startMusicOnInteraction);
-    document.addEventListener("touchstart", startMusicOnInteraction);
-    document.addEventListener("keydown", startMusicOnInteraction);
-  }
+  // keep icon in sync
+  audio.addEventListener("play", updateMusicIcon);
+  audio.addEventListener("pause", updateMusicIcon);
+}
 
 
   /* =========================
